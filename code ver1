@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>自然唱片播放器</title>
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .record {
+      width: 250px;
+      height: 250px;
+      background-image: url('vinyl.png'); /* 請換成你的唱片圖 */
+      background-size: cover;
+      border-radius: 50%;
+      animation: spin 4s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button {
+      background-color: #333;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="record" id="record"></div>
+
+  <div class="controls">
+    <button onclick="playSound('wind')">風聲</button>
+    <button onclick="playSound('tea')">茶沸聲</button>
+    <button onclick="playSound('bee')">蜜蜂聲</button>
+    <button onclick="playSound('rice')">米落鍋</button>
+  </div>
+
+  <audio id="wind" src="wind.mp3"></audio>
+  <audio id="tea" src="tea.mp3"></audio>
+  <audio id="bee" src="bee.mp3"></audio>
+  <audio id="rice" src="rice.mp3"></audio>
+
+  <script>
+    function playSound(id) {
+      const sounds = ['wind', 'tea', 'bee', 'rice'];
+      sounds.forEach(s => {
+        const audio = document.getElementById(s);
+        audio.pause();
+        audio.currentTime = 0;
+      });
+
+      const audio = document.getElementById(id);
+      audio.play();
+    }
+  </script>
+</body>
+</html>
