@@ -5,7 +5,7 @@
   <title>自然唱片播放器</title>
   <style>
     body {
-      background: #111;
+      background: #fff;
       color: white;
       font-family: sans-serif;
       display: flex;
@@ -17,8 +17,8 @@
       }
 
   .record {
-      width: 250px;
-      height: 250px;
+      width: 879px;
+      height: 658px;
       background-image: url('/radio.png'); /* 請換成你的唱片圖 */
       background-size: cover;
       border-radius: 50%;
@@ -64,10 +64,10 @@
     <button onclick="playSound('rice')">米落鍋</button>
   </div>
 
-  <audio id="wind" src="wind.mp4"></audio>
-  <audio id="tea" src="tea.mp4"></audio>
-  <audio id="bee" src="bee.mp4"></audio>
-  <audio id="rice" src="rice.mp4"></audio>
+  <audio id="wind" src="/music/wind.mp4"></audio>
+  <audio id="tea" src="/music/tea.mp4"></audio>
+  <audio id="bee" src="/music/bee.mp4"></audio>
+  <audio id="rice" src="/music/rice.mp4"></audio>
 
   <script>
     function playSound(id) {
