@@ -12,20 +12,21 @@
       font-family: sans-serif;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      /*align-items: center; 置中對齊*/ 
+      align-items: baseline; /*中線對齊*/
       justify-content: center;
       height: 100vh;
-      margin: 0;
+      margin: 100px;
       }
 
   .record {
-      width: 1182px;
-      height: 1182px;
+      width: 500px;
+      height: 500px;
       background-image: url('/record.png'); 
       background-size: cover;
       border-radius: 50%;
       animation: spin 10s linear infinite;
-      margin-bottom: 20px;
+      margin-bottom: 50px;
     }
 
   @keyframes spin {
@@ -42,14 +43,14 @@
 
   button {
       background-color: #34553b;
+      width:140px;
+      height:50px;
       border: none;
       color: white;
-      padding: 10px 20px;
+      padding: 10px 15px;
       font-size: 16px;
       border-radius: 8px;
       cursor: pointer;
-      width:100px;
-      height:50px;
       transition: background-color 0.3s;
     }
 
